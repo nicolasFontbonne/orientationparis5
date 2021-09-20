@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<meta charset="utf-8"/>
+<meta property="og:title" content="Brief maraude">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="referrer" content="origin">        
+<meta name="viewport" content="width=device-width, minimum-scale=1">
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta name="x-apple-disable-message-reformatting">
+<html>
+<head>
+<style type="text/css">
+    /* What it does: Remove spaces around the email design added by some email clients. */
+    /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+    html,body {
+      margin:0 auto !important;
+      padding:0 !important;
+      height:100% !important;
+      width:100% !important;
+    }
+
+    /* What it does: Stops email clients resizing small text. */
+    * {
+      -ms-text-size-adjust:100%;
+      -webkit-text-size-adjust:100%;
+    }
+
+    /* What it does: Stops Outlook from adding extra spacing to tables. */
+    table,td {
+      mso-table-lspace:0 !important;
+      mso-table-rspace:0 !important;
+    }
+
+    /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+    table {
+      border-spacing:0 !important;
+      border-collapse:collapse !important;
+      table-layout:fixed !important;
+      margin:0 auto !important;
+    }
+
+    table table table {
+      table-layout:auto;
+    }
+
+    /* What it does: Uses a better rendering method when resizing images in IE. */
+    img {
+      -ms-interpolation-mode:bicubic;
+    }
+
+    /* What it does: A work-around for email clients meddling in triggered links. */
+    [x-apple-data-detectors],/* iOS */
+    .x-gmail-data-detectors,/* Gmail */
+    .x-gmail-data-detectors *,
+    .aBn {
+      border-bottom:0 !important;
+      cursor:default !important;
+      color:inherit !important;
+      text-decoration:none !important;
+      font-size:inherit !important;
+      font-family:inherit !important;
+      font-weight:inherit !important;
+      line-height:inherit !important;
+    }
+
+    /* What it does: Prevents Gmail from displaying an download button on large, non-linked images. */
+    .a6S {
+      display:none !important;
+      opacity:.01 !important;
+    }
+
+    /* If the above doesn't work, add a .g-img class to any image in question. */
+    img.g-img + div {
+      display:none !important;
+    }
+
+    /* What it does: Prevents underlining the button text in Windows 10 */
+    .button-link {
+      text-decoration:none !important;
+    }
+
+    /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+    /* Create one of these media queries for each additional viewport size you'd like to fix */
+    /* Thanks to Eric Lepetit @ericlepetitsf) for help troubleshooting */
+    @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+      /* iPhone 6 and 6+ */
+      .email-container {
+        min-width:375px !important;
+      }
+    }
+
+    .ii a[href] {
+      color:#15c;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    h2,h3,p,span {
+      margin:0;
+      line-height:1.3;
+      color:#222222;
+    }
+
+    h2,h3 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight:bold;
+        text-transform: uppercase;
+    }
+
+    @media only screen and (min-width: 600px) {
+      h2 {
+        font-size: 24px;
+      }
+    }
+
+    p,li,td {
+        font-family: Arial, Helvetica, sans-serif;
+              line-height:1.5;
+      color:#222222;
+    }
+
+    a {
+      color:#006699 !important;
+      text-decoration:none;
+    }
+
+    h2 a {
+      color:#222222 !important;
+    }
+
+    td {
+      padding: 0;
+    }
+
+    .half-width-split-row td {
+      width:50%;
+      padding-bottom:10px;
+    }
+
+    .header-text {
+        font-family: Arial, Helvetica, sans-serif;
+              font-size:14px;
+      color:#222222;
+    }
+
+    .intro-text {
+      padding:24px 20px;
+    }
+
+    .intro-text-p {
+      font-size:17px;
+      color:#222222;
+      margin:0;
+    }
+
+    @media only screen and (min-width: 600px) {
+      .intro-text-p {
+        font-size: 18px;
+      }
+    }
+
+    .infographic {
+      width:100%;
+      text-align:center;
+      padding-top:0;
+    }
+
+    .infographic img {
+      width:100%;
+      max-width:560px;
+      height:auto !important;
+      display:inline-block;
+    }
+
+    .full-width-img {
+      width:100%;
+      padding-bottom:6px;
+    }
+
+    .full-width-img img {
+      display:block;
+      width:100%;
+      max-width:600px;
+      height:auto;
+    }
+
+    .inline-image-caption {
+      padding:0 20px;
+    }
+
+    .full-width-img span,.inline-image-caption span {
+        font-family: Arial, Helvetica, sans-serif;
+              font-size:14px;
+      color:#4a4a4a;
+    }
+
+    .full-width-img span.lighter,.inline-image-caption span.lighter {
+      color:#979797;
+    }
+
+    .content-block {
+      padding:0 20px;
+      font-family: Arial, Helvetica, sans-serif;
+        }
+
+    .content-block,.content-block p,.content-block li,
+    .breakthroughs,.breakthroughs p,.breakthroughs li,
+    .callout-box,.callout-box p,.callout-box li,
+    .roundup,.roundup p,.roundup li {
+      font-size:17px;
+      font-weight:normal;
+      letter-spacing:.2px;
+    }
+    .content-block p,.breakthroughs p,.callout-box p,.roundup p {
+      margin:16px 0 10px;
+    }
+    .content-block p:last-child,.breakthroughs p:last-child,.callout-box p:last-child,.roundup p:last-child {
+      margin-bottom: 0;
+    }
+    @media only screen and (min-width: 600px) {
+      .content-block,.content-block p,.content-block li,
+      .breakthroughs,.breakthroughs p,.breakthroughs li,
+      .callout-box,.callout-box p,.callout-box li,
+      .roundup,.roundup p,.roundup li {
+        font-size: 18px;
+      }
+    }
+
+    .content-block.free-text p:first-child,
+    .content-block.sign-off p:first-child {
+      margin-top: 0;
+    }
+
+    .quote-of-the-day p {
+      font-size:14pt;
+      font-weight:normal;
+      letter-spacing:.2px;
+      margin:16px 0 10px;
+    }
+
+    .callout-p {
+      font-weight:normal;
+    }
+
+    .content-reference {
+        font-family: Arial, Helvetica, sans-serif;
+              font-size:14px;
+      font-weight:normal;
+      display:block;
+      color:#4a4a4a;
+      margin-top: 5px;
+    }
+
+    .content-separator {
+      padding:32px 0;
+    }
+
+    .content-separator.callout-separator {
+      padding:16px 0;
+    }
+
+    .content-separator table {
+      width:100%;
+    }
+
+    .content-separator table td {
+      height:1px;
+      line-height:1px;
+      padding:0;
+      border-top:1px solid #EAE7E1;
+    }
+
+    .section-header {
+      padding:32px 0;
+    }
+
+    .grouped-section-header {
+      padding:32px 0 0;
+    }
+
+    .section-header table {
+      width:100%;
+      padding:0;
+    }
+
+    .section-header table td {
+      padding:8px 20px;
+    }
+
+    .section-header h2,.special-issue h2 {
+      color:#FFFFFF;
+      font-family: Arial, Helvetica, sans-serif;
+            font-size:18px;
+      font-weight:bold;
+      line-height:18px;
+      letter-spacing:-.3px;
+    }
+
+    .special-issue {
+      /*padding:32px 0;*/
+    }
+
+    .special-issue-inner-content {
+      width:100%;
+      background-color:#F3F3F3;
+      padding:32px 20px;
+      font-size:18px;
+    }
+
+    .special-issue-inner-content td {
+      font-size:18px;
+    }
+
+    .special-issue-inner-content h2 {
+      margin-bottom:16px;
+      font-family: Arial, Helvetica, sans-serif;
+            font-size:24px;
+      line-height:1.3;
+      font-weight:bold;
+      color:#222222;
+    }
+
+    .special-issue-inner-content h3 { /*"eyebrow" heading*/
+      border-top: 1px solid #ccc;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      padding-top: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+      line-height: 1.3;
+      font-weight: bold;
+      color: #666;
+    }
+
+    .special-issue-inner-content ul,
+    .breakthroughs ul,
+    .poll-box ul,
+    .roundup ul {
+      padding-left:18px;
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
+
+    .special-issue-inner-content p,
+    .breakthroughs p {
+      font-size:18px;
+      margin-bottom:0;
+    }
+
+    .special-issue-inner-content li,
+    .breakthroughs li {
+      font-size:18px;
+    }
+
+    .special-issue-image img {
+      width:100%;
+      height:auto;
+    }
+
+    .special-issue-image td {
+      padding:0;
+    }
+
+    .special-issue-image-hide,
+    .special-issue-caption-hide {
+      display: none;
+    }
+
+    .special-issue-inner-content .content-reference {
+      margin-top: 1em;
+    }
+
+    .poll-box .poll-index {
+      padding-right:16px;
+    }
+
+    .poll-box .poll-index span {
+      display:block;
+      min-width:20px;
+      min-height:20px;
+      text-align:center;
+      background-color:#ffffff;
+      border:1px solid #666666;
+      font-family: Arial, Helvetica, sans-serif;
+            font-size:18px;
+      text-transform:uppercase;
+    }
+
+    .poll-box .poll-option {
+      padding-bottom:16px;
+      font-family: Arial, Helvetica, sans-serif;
+    line-height:1.5;
+      color:#222222;
+      font-size:18px;
+    }
+
+    .poll-box .poll-option a {
+      color:#222222 !important;
+      font-weight:normal;
+      text-decoration:underline;
+    }
+
+    .breakthroughs,.poll-box,.quote-of-the-day,.callout-box,.roundup {
+      background-color:#f3f3f3;
+      padding:32px 20px;
+      overflow:hidden;
+    }
+
+    .podcast {
+      background-color:#e8eff3;
+      padding:32px 20px;
+    }
+
+    .podcast .callout-img-holder {
+      padding-bottom:16px;
+    }
+
+    .with-borders {
+      border-top:1px solid #4A4A4A;
+      border-bottom:1px solid #222222;
+    }
+
+    .breakthroughs h2,.poll-box h2,.callout-box h2,.quote-of-the-day h2,.podcast h2,.roundup h2,.feedback-box-title h3,.figure-box h3 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:18px;
+      font-weight:bold;
+      text-transform:uppercase;
+      color:#222222;
+      margin-bottom:16px;
+    }
+
+    .breakthroughs p,.poll-box p,.feedback-box-title p,.roundup p {
+      font-size:18px;
+      letter-spacing:.3px;
+    }
+
+    .poll-box p.poll-question {
+      margin-bottom: 1em;
+    }
+
+    .quote-of-the-day a.quote-of-the-day-copy {
+      color:#006699;
+      font-size: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+        letter-spacing:.3px;
+      line-height:26px;
+      padding-bottom:0;
+    }
+
+    @media only screen and (min-width: 600px) {
+      .quote-of-the-day a.quote-of-the-day-copy {
+        font-size: 20px;
+      }
+    }
+
+    .callout-img-holder {
+      padding-right:24px;
+    }
+
+    .callout-img-holder img {
+      max-width:150px;
+      height:auto;
+    }
+
+    .figure-box {
+      padding:0 20px;
+    }
+
+    .podcast p,.figure-box p {
+      font-size:18px;
+      font-weight:normal;
+      padding-top:0;
+      padding-bottom:0;
+    }
+
+    .figure-box-figure {
+      padding-right:24px;
+    }
+
+    .figure-box-figure h2 {
+      text-align:center;
+      font-size:36px;
+      color:#006699;
+    }
+
+    .inline-image {
+      padding:0 20px;
+    }
+
+    .inline-image img {
+      width:100%;
+      height:auto;
+    }
+
+    .inline-image-with-caption {
+      padding:0 20px;
+    }
+
+
+    .sign-off,.footer {
+      letter-spacing:.4px;
+      color:#4a4a4a;
+    }
+
+    .footer-socialmedia-buttons {
+      padding-bottom:16px;
+    }
+
+    .footer-socialmedia-buttons span,.footer p {
+        font-family: Arial, Helvetica, sans-serif;
+      font-size:14px;
+      font-weight:normal;
+    }
+
+    .footer-logo {
+        font-size:16px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight:bold;
+        color:#222222;
+    }
+
+    @media only screen and (min-width: 550px) {
+      .callout-box table td {
+        width:auto;
+        float:none;
+      }
+    }
+
+    /* small screen Styles */
+    @media only screen and (max-width: 550px) {
+      .figure-box {
+        padding:0 20px !important;
+      }
+
+      .callout-box table,.figure-box table,.sign-off table {
+        width:100% !important;
+      }
+
+      .figure-box table th,.podcast table th,.callout-box table th,.sign-off table td {
+        clear:both !important;
+        float:left !important;
+        width:100% !important;
+      }
+
+      .figure-box-figure h2 {
+        text-align:left;
+      }
+
+      .quote-of-the-day,.callout-box,.podcast,.breakthroughs,.poll-box,.roundup {
+        padding:32px 20px !important;
+      }
+
+      .sign-off td {
+        clear:both !important;
+        float:left !important;
+        width:100% !important;
+      }
+    }
+
+    .logo-block {
+        display: block;
+    }
+
+    .has-png-bg {
+        background: url(https://media.springernature.com/full/nature-briefing/white.png) repeat;
+    }
+
+    .eyebrow-heading {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .belongsTo,
+    .componentStart,
+    .componentEnd {
+        display: none;
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        clip: rect(0 0 0 0);
+    }
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body style="width:100%;margin:0px; background-color:#FFFFFF; mso-line-height-rule: exactly;">
+<center style="width:100%; margin:auto; background-color:#FFFFFF; text-align:left;">
+<div class="email-container" style="max-width:600px;margin:auto;">
+
+
+<table role="presentation" email-container" align="center" cellspacing="0px" cellpadding="0px" width="100%" style="max-width:600px;">
+          
+<tbody>
+    
+<!-- START : intro -->
+<tr>
+  <td class="content-block">
+    <img style='float: right; margin-right: 15px; margin-top: 15px;' height='40px' src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/751ddcec-4380-424c-ae9b-de50d41c023a/Emblem280.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210917%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210917T215601Z&X-Amz-Expires=86400&X-Amz-Signature=6fce026534f9017efebf872537d3f64cf1f4a6d8cfd733a26e24c20ece0b8653&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Emblem280.png%22">
+  </td>
+</tr>
+  <!-- END : intro -->
+
+<!-- START : intro -->
+<tr>
+<td class="content-block">
+  <p><br>👋 Salut <i>prénom</i> !<br>Voici le brief pour ta mauraude du <i>date</i>.</p>
+</td>
+</tr>
+<!-- END : intro -->
+
+<!-- START : space separator -->
+<tr>
+    <td class="content-separator callout-separator" style="padding:16px 0;"></td>
+    </tr>
+    <!-- END : space separator -->
+<!-- START : document interne -->
+<tr>
+    <td style="background-color:#E30613; padding:0px 20px;">
+      <p style="color:#FFFFFF; font-size: 8pt;"><b>DOCUMENT INTERNE | C3 CONFIDENTIEL</b></p>
+    </td>
+</tr>
+<!-- END : document interne -->
+<!-- START : space separator -->
+<tr>
+    <td class="content-separator callout-separator" style="padding:16px 0;"></td>
+    </tr>
+    <!-- END : space separator -->
+
+<!-- START : article -->
+<tr>
+  <td class="content-block">
+      <h2>🦸 Équipe</h2>
+
+<div style="padding: 16px 0px;">
+
+
+    <table style="width: 100%;"  cellpadding="2">
+        <tbody>
+        <tr style="height: 50px; border-top:1px solid #EAE7E1;">
+        <td >Prénom Nom</td>
+        <td style="text-align: right;">CES</td>
+        </tr>
+        <tr style="height: 50px; border-top:1px solid #EAE7E1;">
+        <td>Prénom Nom</td>
+        <td style="text-align: right;">&nbsp;</td>
+        </tr>
+        <tr style="height: 50px; border-top:1px solid #EAE7E1;">
+          <td>Prénom Nom</td>
+          <td style="text-align: right;">&nbsp;</td>
+          </tr>
+        <tr style="height: 50px; border-top:1px solid #EAE7E1; border-bottom:1px solid #EAE7E1;">
+          
+        <td>Prénom Nom</td>
+        <td style="text-align: right;">Maraude d'observation</td>
+        </tr>
+        </tbody>
+        </table>
+    </div>
+  </td>
+</tr>
+<!-- END : article -->
+
+
+<!-- START : line separator -->
+<tr>
+<td style="padding:32px 0;">
+  <table cellspacing="0" cellpadding="0" style="width:100%;min-width:100%;">
+      <tbody><tr>
+          <td style="height:1px;border-top:1px solid #EAE7E1;"></td>
+      </tr>
+  </tbody></table>
+</td>
+</tr>
+<!-- END : line separator -->
+
+<!-- START : article -->
+<tr>
+    <td class="content-block">
+        <h2>📍 Accès</h2>
+        <p style="line-height:1.5;"> Rendez-vous au 9 rue Laplace, 75005 Paris. <br>Pour entrer, le digicode est <b>A905B</b>. Il faut traverser la cour puis suivre la signalétique Croix-Rouge pour arriver à nos locaux.</p>
+    </td>
+</tr>
+<!-- END : article -->
+
+<!-- START : space separator -->
+<tr>
+    <td class="content-separator callout-separator" style="padding:16px 0;"></td>
+    </tr>
+    <!-- END : space separator -->
+    
+<!-- START : encadre -->
+<tr>
+    <td class="quote-of-the-day" style="background-color:#EAE7E1;padding:32px 20px;">
+      <!--<h2>Quote of the day</h2>-->
+      <p>Si tu as des difficulté pour te rendre sur place, n'hésite pas à joindre le chef d'équipe de la soirée au <i>téléphone CES</i></p>
+    </td>
+    </tr>
+    <!-- END : encadre -->
+
+<!-- START : line separator -->
+<tr>
+    <td class="content-separator" style="padding:32px 0;">
+      <table cellspacing="0" cellpadding="0" border="0" style="width:100%;min-width:100%;">
+          <tbody><tr>
+              <td style="height:1px;border-top:1px solid #EAE7E1;"></td>
+          </tr>
+      </tbody></table>
+    </td>
+</tr>
+<!-- END : line separator -->
+
+<!-- START : article -->
+<tr>
+    <td class="content-block">
+        <h2>✔️ Checklist</h2>
+        <ul>
+            <li>Carte d'identité</li>
+            <li>Carte de bénévole (si vous l’avez)</li>
+            <li>Uniforme (à récupérer au local si vous n'en n'avez pas)</li>
+            <li>Chaussures confortables (pas de sandale, ou autres chaussures ouvertes)</li>
+        </ul>
+    </td>
+</tr>
+<!-- END : article -->
+
+<!-- START : line separator -->
+<tr>
+  <td style="padding:32px 0;">
+    <table cellspacing="0" cellpadding="0" style="width:100%;min-width:100%;">
+        <tbody><tr>
+            <td style="height:1px;border-top:1px solid #EAE7E1;"></td>
+        </tr>
+    </tbody></table>
+  </td>
+  </tr>
+  <!-- END : line separator -->
+  
+  <!-- START : article -->
+  <tr>
+      <td class="content-block">
+          <h2>🗺 Itinéraire</h2>
+          <p style="line-height:1.5;"> Tu peux retrouver l'itinéraire de la maraude en <a href="https://www.google.com/maps/d/u/1/edit?mid=1_PIs4tHb0cfy9mk2evAvD8M_ye1uz7h5&ll=48.843229887262225%2C2.3513349999999944&z=16">cliquant ici</a>.</p>
+      </td>
+  </tr>
+  <!-- END : article -->
+
+<!-- START : line separator -->
+<tr>
+    <td class="content-separator" style="padding:32px 0;">
+      <table cellspacing="0" cellpadding="0" border="0" style="width:100%;min-width:100%;">
+          <tbody><tr>
+              <td style="height:1px;border-top:1px solid #EAE7E1;"></td>
+          </tr>
+      </tbody></table>
+    </td>
+</tr>
+<!-- END : line separator -->
+
+<!-- START : article -->
+<tr>
+    <td class="content-block ">
+        <h2>🧭 Orientation</h2>
+        <p style="line-height:1.5;"><i>
+          Remplir ici les actualités liés à l'orientation dans l'arrondissement et Paris, issue de l'équipe orientation.
+        </i></p>
+    </td>
+</tr>
+<!-- END : article -->
+<!-- START : line separator -->
+<tr>
+    <td class="content-separator" style="padding:32px 0;">
+      <table cellspacing="0" cellpadding="0" border="0" style="width:100%;min-width:100%;">
+          <tbody><tr>
+              <td style="height:1px;border-top:1px solid #EAE7E1;"></td>
+          </tr>
+      </tbody></table>
+    </td>
+</tr>
+<!-- END : line separator -->
+
+<!-- START : article -->
+<tr>
+    <td class="content-block ">
+        <h2>👥 Personnes accompagnées</h2>
+        <p style="line-height:1.5;"><i>
+          Remplir ici les actualités liés aux personnes accompagnées, issue des comptes rendus des CES.
+        </i></p>
+    </td>
+</tr>
+<!-- END : article -->
+<!-- START : line separator -->
+<tr>
+    <td class="content-separator" style="padding:32px 0;">
+      <table cellspacing="0" cellpadding="0" border="0" style="width:100%;min-width:100%;">
+          <tbody><tr>
+              <td style="height:1px;border-top:1px solid #EAE7E1;"></td>
+          </tr>
+      </tbody></table>
+    </td>
+</tr>
+<!-- END : line separator -->
+
+<!-- START : article -->
+<tr>
+    <td class="content-block ">
+        <h2>🦠 Coronavirus</h2>
+        <p style="line-height:1.5;">Le port du masque chirurgical, l'ensemble des gestes barrières et des distances de sécurité sont à respecter pendant toute la maraude. Vous retrouverez les protocoles Croix-Rouge détaillés sur <a href="https://intranet.croix-rouge.fr/jcms/p1_5352376/fr/covid-19-fiches-techniques-et-guides-operationnels">l'intranet</a>.</p>
+    </td>
+</tr>
+<!-- END : article -->
+
+
+
+<!-- START : line separator -->
+<tr>
+<td class="content-separator" style="padding:32px 0;">
+  <table cellspacing="0" cellpadding="0" border="0" style="width:100%;min-width:100%;">
+      <tbody><tr>
+          <td style="height:1px;border-top:1px solid #EAE7E1;"></td>
+      </tr>
+  </tbody></table>
+</td>
+</tr>
+<!-- END : line separator -->
+
+
+<!-- START : sign off -->
+<tr>
+<td class="content-block sign-off">
+  <table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;min-width:100%;">
+      <tbody><tr>
+          <td style="line-height:1.5;">
+            <p>👉 Une question?<br> <a href="https://wa.me/33602232039/?text=Salut Nicolas,">Envoi un message à Nicolas, responsable des maraudes.</a></p>
+            <p>Bravo et merci de ton engagement 😊</p>
+            <p style="text-align: right;"><i>L'équipe des maraudes</i></p>
+          </td>
+      </tr>
+  </tbody></table>
+</td>
+</tr>
+<!-- END : sign off -->
+
+<!-- START : space separator -->
+<tr>
+    <td class="content-separator callout-separator" style="padding:16px 0;"></td>
+    </tr>
+    <!-- END : space separator -->
+<tr>
+<td class="content-block" style="padding-bottom:10px;padding-top:10px;">
+<table style="width:100%; min-width:100%;font-size:8pt;">
+<tbody>
+    <tr>
+  <td style="padding-bottom:10px; padding: 0 20px;" valign="middle">
+    <a href="https://www.croix-rouge.fr/" target="_blank"><img src="https://www.croix-rouge.fr/design/crf_refonte/images/logo.png" height="40" alt="croix-rouge"></a>
+  </td>
+  <td valign="middle">
+    <table style="text-align:right;margin-right: 1em;">
+    <tbody>
+        <tr>
+            <th style="padding:0 4px;"><span style="font-size:14px; color:#666;">Suivre l'unité locale</span></th>
+            <th style="padding:0 4px;"><a href="https://www.instagram.com/croixrougeparis5" target="_blank"><img src="https://hub.websites.croix-rouge.fr/wp-content/uploads/sites/67/2020/04/insta.png" width="35" height="35" alt="twitter"></a></th>
+            <th style="padding:0 4px;"><a href="https://www.facebook.com/CroixRougeParis5" target="_blank"><img src="https://hub.websites.croix-rouge.fr/wp-content/uploads/sites/67/2020/04/facebook.png" width="35" height="35" alt="Facebook"></a></th>
+        </tr>
+    </tbody>
+</table>
+  </td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+
+
+
+<tr>
+<td class="content-block footer" style="line-height:1.5;font-size:14px;">
+<p style="margin:16px 0;">Tu as reçu ce mail car tu es inscrit à l'activité <a hrel='#'><i>id de l'activité</i></a> sur Pegass, et tu as renseigné <i>email@croix-rouge.fr</i> comme e-mail de préférence.</p>
+<p style="margin:16px 0;color:#666666;">Croix-Rouge française | Unité Locale de Paris V | 9 rue Laplace, 75005 Paris</p>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+</center>
+</div>
+</body>
+</html>
